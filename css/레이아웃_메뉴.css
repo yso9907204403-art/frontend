@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+} 
+ul{
+    list-style: none;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color: #222;
+}        
+.badge{
+    position: relative; /* 기준이 되는 상자 */
+    /*top: 10px;
+    left: 10px;*/
+
+    border: none;
+    padding: 10px 20px;
+}
+.badge_img{
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute; /* 기준이 되는 상자로 부터 위치를 잡음 */
+    top: -15px;
+    right: -15px;
+}
+.fixedbox{
+    position: fixed; /* 위치 고정 */
+    top: 10px;
+    right: 10px;
+    background-color: blue;
+    z-index: 999; /* 위치를 조정할수있는 요소만 가능 */
+}
+body{
+     height: 200vh;
+}
+
+/*
+    메뉴 만들기
+*/
+.menu{
+    display: flex;
+}
+.menu_item{
+    position: relative;
+    padding: 0px 10px;
+    height: 40px;
+    line-height: 40px;
+    background-color: beige;
+}
+.submenu{
+    position: relative;
+    top: 40px;
+    left: 0px;
+    width: 100px;
+    background-color: bisque;
+    padding-left: 10px;
+    display: none;
+}
+.menu_item:hover > .submenu, .menu_item:hover{
+    background-color: blanchedalmond;
+    display: block;
+}
+/*.menu_item:hover{
+    font-weight: 700;
+}*/
+
+/* CAROUSEL */
+.CAROUSEL{
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+.CAROUSEL img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.CAROUSEL button{
+    position: absolute;
+    top: 0;
+    border: none;
+    opacity: 0.5; /* 투명도 0은 투명 1은 불투명 */
+    height: 100%;
+    font-weight: 800;
+    color: #555;
+    z-index: 10;
+}
+.CAROUSEL button:first-of-type{
+    top: 0px;
+    left: 0px;
+}
+.CAROUSEL button:last-of-type{
+    top: 0px;
+    right: 0px;
+}
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}

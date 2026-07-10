@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+        :root{
+            --white : #fff;
+        }
+
+        .modal-backdrop{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 전체 고정 검정화면 */
+            position: fixed;
+            background-color: rgba(21, 94, 153, 0.212);
+            inset: 0;
+        }
+        .modal-box{
+            background-color: var(--white);
+            width: 400px;
+            padding: 20px;
+            position: relative;
+
+            border-radius: 20px;
+        }
+        .modal-box input{
+            width: 100%;
+        }
+        .modal-close{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+
+            border: none;
+            background-color: #fff;
+            font-size: 2rem;
+            color: #12922e;
+        }
+        .btn{
+            
+        }
+        .w-100{
+            width: 100%;
+        }
+        .bc-blue{
+            background-color: blue;
+        }
+        .border-none{
+            border: none;
+        }
+        .h-30px{
+            height: 30px;
+        }
+        .fs-large{
+            font-size: 1.2rem;
+        }
+        .bo
+
+        #modalTitle{       
+            font-family: "Nanum Brush Script", cursive;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 2rem;
+        }
+        #modalContent{
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .mb-20{
+            margin: 20px;
+        }
+        .modal-box input{
+            margin: 10px 0px;
+            height: 30px;
+            font-size: 1.2rem;
+            padding-left: 10px;
+            border: 1px solid #ccc;
+        }
+        .modal-box.mb-20{
+            margin-bottom: 20px;
+        }
+        .show{
+            
+        }
+
+
+    </style>
+</head>
+<body>
+        <!-- 모달을 여는 버튼 -->
+        <button id="loginTrigger">로그인</button>
+
+        <!-- 평소엔 숨겨져 있는 백드롭 + 모달 -->
+         <!-- class 속성을 여러개 적용 할 경우, 띄어쓰기를 이용해서 연결-->
+        <div class="modal-backdrop show" id="modalBackdrop">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="modalClose" aria-label="닫기">&times;</button>
+            <h3 id="modalTitle">로그인</h3>
+            <h6 id="modalContent" class="mb-20">이메일과 비밀번호를 입력하세요</h6>
+            <form id="loginForm">
+            <label for="email">이메일</label>
+            <input type="email" id="email" required>
+
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" required>
+
+            <button type="submit" class="btn w-100 border-none h-30px">로그인</button>
+            </form>
+        </div>
+    </div> 
+</body>
+</html>
