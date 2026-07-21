@@ -30,6 +30,36 @@
     }
   </style>
 </head>
+  <script>
+    let grid = document.querySelector('.grid');
+    console.log('바로선택', grid);
+
+    // = --> load 이벤트가 발생 하면 싱행될수 있도록 처리
+    window.addEventListener('load', function(){
+      let grid = document.querySelector('.grid');
+      console.log('load이벤트를 통해 선택', grid);
+      // grid.innertext = '텍스트 입력';
+
+      for(let i=0; i<6;){
+        
+      }
+      grid.innerHTML = make_card();
+    })
+
+
+
+
+    function make_card(){
+      return `<article class="card rounded-lg overflow-hidden flex-2" data-rating="9.2">
+        <img class="w-100 h-300px object-cover" src="https://picsum.photos/seed/movie1/300/400" alt="스텔라 오디세이 포스터">
+        <div class="card-body bg-white px-3 py-5 fs-lg">
+          <h3>스텔라 오디세이</h3>
+          <p class="genre text-gray mb-">SF · 액션</p>
+          <span class="badge">NEW</span>
+        </div>
+      </article>`
+    }
+  </script>
 <body class="bg-light">
 
   <header id="site-header" class="d-flex justify-between items-center

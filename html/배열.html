@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열</h1>
+    <script>
+        // 배열 선언 : 여러갸의 데이터를 하나의 변수애 저장 선언
+        // 선언 : []를 이용해서 여러개의 값을 나열
+        // 배열의변수명
+        const titles = ["도시의 밤", "파랑의 계절", "스텔라 오디세이"];
+        // 반복문 안에 있는 데이터의 값을 출력 하기 위해서 반복문을 이용
+        for(let i=0; i<titles.length; i++){
+            // 배열의 방의 데이터 읽어오기
+            console.log(titles[i])
+        }
+
+        // 배열의 방의 갑을 변경하기
+        titles[2] = "타짜";
+        console.log(titles);
+        // 없는 방번호를 입력하면 = undifined
+        console.log(titles[4]);
+
+        const arr1 = new Array(1,2,3);
+        console.log(arr1);
+
+        function welcome1(){
+            console.log("무비 컬렉션에 오신 것을 환영합니다");
+            let box = document.querySelector(".box");
+        }
+
+        let welcome2 = function(){
+            console.log("무비 컬렉션에 오신 것을 환영합니다");
+        }
+
+        let welcome3 = () => {
+            console.log("무비 컬렉션에 오신 것을 환영합니다");
+        }
+    </script>
+</body>
+</html>

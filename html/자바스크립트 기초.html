@@ -180,6 +180,43 @@
             console.log("falsy하지 않은 값은 true로 처리돼요");
         }
 
+        /* 반복문 
+        for(초기식, 조건식, 증감식){
+        }
+        초기식 - 변수초기화(처음 1번 실행)
+        조건이 참이면 코드블럭이 실행
+        증감식으로 변수의 값을 증가또는 감소
+        조건이 참이면 코드블럭 실행
+
+        조건이 참이 아니면 반복문 종료
+        1부터 10까지 1씩 증가하면서 값을 출력
+        */
+        console.log("---  반복문  ---")
+        
+        for(let i=1; i<10; i++){
+            console.log(i)
+            if(i%2 == 0){
+                console.log(i);
+
+            }
+        }
+
+        // 구구단 출력하기 1
+        let dan = 2;
+        console.log("2단 출력");
+        for(let i=1; i<10; i++){
+            console,log('${dan} * ${i} = ${dan*i}');
+        }
+
+        console.log("2단부터 9단까지 출력")
+        // 구구단 출력하기 2
+        for(dan=2; dan<10; dan++){
+            console.log(dan + "단");
+            for(let i=1; i<10; i++){
+                console.log('${dan} * ${i} = ${dan*i}');
+            }
+        }
+
     </script>
     <!-- 자바스크립트 외부문서를 연결하는 방법 -->
     <script src="/js/main.js"></script>
