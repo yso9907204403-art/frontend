@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(1)
+        
+        setTimeout(() => {
+            console.log(2)
+            
+            setTimeout(() => {
+                console.log(3)
+            },500);
+
+        }, 1000);
+
+
+        let dbj = new Promise((resolve, reject)=>{
+            // resolve('resolve()호출')
+            reject('rejected()호출')
+        })
+
+        obj
+        .then((msg)=>{
+            console.log(msg)
+        })
+        .catch(e=>{
+            console.log('catch()', e)
+        })
+
+        function delay(ms, msg){
+            /* setTimeout(()=>{
+                console.log('msg', msg) 
+            }, ms);
+            */
+           if(ms < 0){
+            throw new Error('시간은 음수로 입력할수 없습니다')
+           }
+           return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                console.log('msg', msg)
+                resolve(`${msg} 종료`);
+            }, ms)
+           })
+        }
+        
+        let promise = delay(1000, '음료 주문')
+        promise
+        .then((res)=>{
+            console.log('res', res)
+            delay(500,'음료 제조')
+        })
+        .then(res=>{
+            delay(1000, '서빙')
+        })
+        .catch(e=>{
+            console.log(e)
+            console.log('오류발생!!')
+        });
+
+        async function init(){
+
+            let box = document.querySelector('.box')
+
+
+            let res = await fetch('http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&actor=%ED%95%9C%EC%A7%80%EB%AF%BC&ServiceKey=11M1LX721SFQ42K7AQ6R')
+            console.log("fetch 결과", res)
+            let json = await res.json()
+            console.log("json() 결과", json)
+            console.log(json.Data[0].Result)
+            let result = json.Data[0].Result
+            result.forEach(item =>{
+                box.innerHTML += `<p>${item.title}</p>`
+            });
+        }
+
+        window.addEventListener('load', ()=>{
+            init()
+        })
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
